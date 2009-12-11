@@ -1,0 +1,8 @@
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-10 18:43:14) [GET]
+
+ActionController::RoutingError (No route matches "/asdf" with {:method=>:get}):
+  lib/kale.rb:11:in `call'
+
+Rendering rescues/layout (not_found)
