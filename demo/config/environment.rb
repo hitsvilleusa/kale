@@ -40,5 +40,5 @@ Rails::Initializer.run do |config|
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
   
-  config.middleware.use(Kale)
+  config.middleware.use(Kale, "%s - %s - %s", ['REMOTE_ADDR', 'PATH_INFO', 'HTTP_USER_AGENT'])
 end

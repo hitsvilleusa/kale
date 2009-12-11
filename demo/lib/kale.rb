@@ -1,13 +1,13 @@
 class Kale
-  def initialize(app)
+  def initialize(app, fmt, vars)
     @app = app
+    @fmt = fmt
+    @vars = vars
   end
   
   def call(env)
-    File.open("tmp/test.log", 'w') do |file|
-      file.write("Hello World.")
-    end
-    
+    l = Logger.new("#{RAILS_ROOT}/log/kale.log")
+    l.info @fmt % @vars.map { |v| env[v] }
     @app.call(env)
   end
 end
